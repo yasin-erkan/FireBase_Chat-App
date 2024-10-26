@@ -1,0 +1,61 @@
+@import "variables";
+@import "global";
+
+.center-text {
+  text-align: center;
+  h2 {
+    font-size: $h2-font;
+    font-weight: 800;
+  }
+}
+.Top-educations-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+  align-items: center;
+  gap: 3rem;
+  margin-top: 5rem;
+}
+.box {
+  position: relative;
+  &:hover > img {
+    transform: scale(1.05);
+  }
+  img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    filter: brightness(70%);
+    display: block;
+    @extend .transition;
+  }
+  .icons {
+    position: absolute;
+    bottom: 10px;
+    left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    p {
+      font-size: 18px;
+      font-weight: 500;
+      color: #fff;
+      i {
+        color: $main-color !important;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+.center-btn {
+  text-align: center;
+  margin-top: 5rem;
+  @extend .transition;
+  &:hover {
+    transform: scale(1.05);
+  }
+  a {
+    color: $text-color;
+    text-decoration: none;
+  }
+}

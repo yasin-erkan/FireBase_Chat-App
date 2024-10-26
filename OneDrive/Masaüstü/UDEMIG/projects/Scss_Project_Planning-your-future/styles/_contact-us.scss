@@ -1,0 +1,58 @@
+@import "./global";
+@import "./variables";
+@import "./mixin";
+
+.contact-us {
+  @extend .flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  @include laptop() {
+    flex-direction: column;
+  }
+  /* image part */
+  .contact-us-img {
+    width: 50%;
+    @include laptop() {
+      width: 90%;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  }
+
+  /* form part */
+  .contact-us-form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    @include laptop() {
+      width: 90%;
+    }
+    label {
+      font-size: 20px;
+    }
+    input,
+    button {
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+    button {
+      background-color: #f8a041;
+      font-size: 16px;
+      margin-top: 20px;
+      color: $text-color;
+      @extend .transition;
+      &:hover {
+        background-color: #a48032;
+        color: $bg-color;
+      }
+    }
+  }
+}

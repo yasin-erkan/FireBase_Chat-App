@@ -1,0 +1,67 @@
+@import "./variables";
+@import "./global";
+@import "./mixin";
+
+header {
+  @include tablet() {
+    justify-content: center;
+  }
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  margin-bottom: 20px;
+  padding: 27px 17px; /* 1.20'den sonra prblem varr !important */
+  z-index: 10000;
+  @extend .flex;
+  justify-content: space-between;
+  .logo {
+    font-size: 33px;
+    color: $text-color;
+    font-weight: 700;
+    span {
+      color: $main-color;
+    }
+  }
+  .navbar {
+    @extend .flex;
+    gap: 10px;
+    li {
+      @include laptop() {
+        display: none;
+      }
+      a {
+        color: $text-color;
+        font-size: $p-font;
+        font-weight: 500;
+        margin: 15px 20px;
+        text-transform: uppercase;
+        @extend .transition;
+        &:hover {
+          color: $main-color;
+        }
+      }
+    }
+  }
+  .header-right {
+    @extend .flex;
+    a {
+      @include tablet() {
+        display: none;
+      }
+      font-size: 20px;
+      color: $text-color;
+      margin-right: 18px;
+      margin-left: 5px;
+      @extend .transition;
+      &:hover {
+        color: $main-color;
+        transform: translateY(-3px);
+      }
+    }
+    a:first-child {
+      font-size: $main-color;
+      margin-right: 20px;
+    }
+  }
+}

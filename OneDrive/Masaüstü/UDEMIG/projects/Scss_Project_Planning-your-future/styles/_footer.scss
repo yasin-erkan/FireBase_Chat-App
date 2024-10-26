@@ -1,0 +1,55 @@
+@import "./global";
+@import "./variables";
+
+.footer {
+  padding: 20px;
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    gap: 2rem;
+    .footer-box {
+      display: flex;
+      flex-direction: column;
+      h3 {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+      a {
+        color: #979797;
+        margin-bottom: 0, 8rem;
+        text-decoration: none;
+        @extend.transition;
+        &:hover {
+          color: $text-color;
+          transform: translateX(-5px);
+        }
+      }
+    }
+  }
+}
+.socials a {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  background-color: #202020;
+  width: 45px;
+  height: 45px;
+  border-radius: 50px;
+  color: $text-color;
+  font-size: 20px;
+  &:hover {
+    color: $main-color;
+    transform: translateX(-3px);
+  }
+  &:hover i {
+    color: $bg-color;
+  }
+}
+.copy-right {
+  text-align: center;
+  padding: 20px;
+  color: #979797;
+  margin: top 50px;
+  font-size: 15px;
+}
